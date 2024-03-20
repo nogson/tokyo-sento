@@ -3,34 +3,476 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "美保湯",
+        "address": "立川市羽衣町1-2-18",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
       "geometry": {
-        "coordinates": [139.75485003572828, 35.70639579360393],
+        "coordinates": [
+          139.42113818775846,
+          35.69789145537179
+        ],
         "type": "Point"
       }
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "松の湯",
+        "address": "八王子市小門町20",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
       "geometry": {
-        "coordinates": [139.75612676722028, 35.704723069730576],
+        "coordinates": [
+          139.32537705888018,
+          35.65974988642962
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "稲荷湯",
+        "address": "八王子市子安町1-27-20",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.34116085239924,
+          35.65282069357117
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大蔵湯",
+        "address": "町田市木曽町522",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.42996509729153,
+          35.56191853137655
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.38098341079393,
+          35.710312964080245
+        ]
+      },
+      "properties": {
+        "name": "富士見湯",
+        "address": "昭島市中神町12-60",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.39054611256262,
+          35.70201054743573
+        ]
+      },
+      "properties": {
+        "name": "昭和湯",
+        "address": "昭島市玉川町4丁目3−7",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.3879509,
+          35.7019514
+        ]
+      },
+      "properties": {
+        "name": "三光湯",
+        "address": "昭島市東町4丁目11−1",
+        "business_hours": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4052181,
+          35.7447062
+        ]
+      },
+      "properties": {
+        "name": "砂川湯",
+        "address": "武蔵村山市学園3丁目98-1",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4302805,
+          35.7373585
+        ]
+      },
+      "properties": {
+        "name": "富士見湯健康セントー",
+        "address": "東大和市南街6-1-25",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4164515683865,
+          35.70350514390856
+        ]
+      },
+      "properties": {
+        "name": "立川湯屋敷 梅の湯",
+        "address": "立川市高松町3-13-2",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.43005719888467,
+          35.561955811584376
+        ]
+      },
+      "properties": {
+        "name": "大蔵湯",
+        "address": "町田市木曽町522",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "松見湯",
+        "address": "立川市羽衣町1-8-12",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.42566038030867,
+          35.69648534195903
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "鳩の湯",
+        "address": "国立市東2-8",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.45210999347887,
+          35.694848816327095
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "旭湯",
+        "address": "府中市宮西町3-6-2",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.4741457776758,
+          35.67177685008829
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "桜湯",
+        "address": "府中市宮町1-23-3",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.48194787407135,
+          35.67096257245758
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "桃の湯",
+        "address": "国分寺市東元町3-1-20",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.4809284651256,
+          35.69386586913352
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "松の湯",
+        "address": "府中市新町3-6-5",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.48777606457026,
+          35.69248148023122
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ぬくい湯",
+        "address": "小金井市貫井北町3-4-4砂川湯",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.49721595292016,
+          35.70720412493701
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "神明湯",
+        "address": "東大和市新堀1−1432−59",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.449513012848,
+          35.73989300602868
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "栄湯",
+        "address": "小平市小川西町3-26-4"
+      },
+      "geometry": {
+        "coordinates": [
+          139.46375335932407,
+          35.7404555802445
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "桜湯",
+        "address": "東村山市萩山町3-15-8",
+        "business_hours": {
+          "weekdays": "14:00-23:00",
+          "holiday": "14:00-23:00"
+        },
+        "holiday": "friday"
+      },
+      "geometry": {
+        "coordinates": [
+          139.4725748278771,
+          35.745911209744094
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "庚申湯",
+        "address": "芝久保町1-13-2"
+      },
+      "geometry": {
+        "coordinates": [
+          139.52845574033017,
+          35.72276487482961
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "藤の湯",
+        "address": "府中市朝日町2-27-20"
+      },
+      "geometry": {
+        "coordinates": [
+          139.51855688149112,
+          35.67681383643935
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二喜多の湯",
+        "address": "東久留米市幸町1-5-10"
+      },
+      "geometry": {
+        "coordinates": [
+          139.52616576367592,
+          35.759870803583865
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "源の湯",
+        "address": "東久留米市東本町7 -6"
+      },
+      "geometry": {
+        "coordinates": [
+          139.53335191654025,
+          35.762348893201874
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "みどり湯",
+        "address": "西東京市ひばりが丘1-14-2"
+      },
+      "geometry": {
+        "coordinates": [
+          139.54267291531687,
+          35.75118600277884
+        ],
         "type": "Point"
       },
-      "id": 1
+      "id": 25
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "name": "ゆパウザひばり",
+        "address": "西東京市谷戸町3-17-8"
+      },
       "geometry": {
-        "coordinates": [139.76410978560898, 35.695808211904364],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [139.7694603117307, 35.709787372561024],
+        "coordinates": [
+          139.5434171436895,
+          35.74817300613459
+        ],
         "type": "Point"
       }
     }

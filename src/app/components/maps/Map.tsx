@@ -23,13 +23,26 @@ export default function Map() {
 
     data.features.forEach((feature: any) => {
       // カスタムアイコンの作成
+
       const customIcon = document.createElement("div");
+
       customIcon.className = "custom-marker"; // CSS クラスを適用
 
-      console.log(feature.geometry.coordinates);
+      // popupを作成
+
+      const popup = new mapboxgl.Popup({
+        offset: 25,
+        className: "custom-popup", // Add your custom CSS class for the popup
+      }).setHTML(
+        `<h3><span class="open">営業中</span>${feature.properties.name}</h3><div>
+        <button class="button-primary-solid sm">詳しく見る</button>
+        </div>`
+      );
+
       // マーカーを追加
-      new mapboxgl.Marker(customIcon)
+      const marker = new mapboxgl.Marker(customIcon)
         .setLngLat(feature.geometry.coordinates) // ピンの位置を指定
+        .setPopup(popup) // ポップアップを追加
         .addTo(map);
     });
   };
@@ -41,7 +54,7 @@ export default function Map() {
         process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL ??
         "mapbox://styles/mapbox/streets-v12",
       center: [139.7670516, 35.6811673],
-      zoom: 15,
+      zoom: 10,
     });
     map.on("load", () => {
       setOriginalLayer(map);

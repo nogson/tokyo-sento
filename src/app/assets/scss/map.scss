@@ -1,0 +1,42 @@
+// マップ上のピン
+.custom-marker {
+  background: url(/assets/images/publicBathIcon.svg) no-repeat;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(1px 1px 1px #50505090);
+  cursor: pointer;
+}
+
+.custom-popup {
+  text-align: center;
+  h3 {
+    font-size: var(--font-size-sm);
+    margin: var(--space-size-xs) 0 var(--space-size-md);
+    text-align: center;
+  }
+  // > div:first-child {
+  //   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
+  // }
+  > div:last-child {
+    border-radius: 10px;
+    padding: var(--space-size-md) var(--space-size-md) var(--font-size-sm);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  .open {
+    background-color: var(--color-sub02);
+    color: var(--color-white);
+    border-radius: 4px;
+    padding: var(--space-size-xs);
+    font-size: var(--font-size-xs);
+    font-weight: normal;
+    margin-right: var(--space-size-xs);
+  }
+}
+
+.mapboxgl-popup-close-button {
+  height: 20px !important;
+  width: 20px !important;
+  padding: 0 !important;
+  line-height: 20px !important;
+}
