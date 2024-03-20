@@ -1,0 +1,8 @@
+// マップ上のピン
+.custom-marker {
+  background: url(/assets/images/publicBathIcon.svg) no-repeat;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(1px 1px 1px #50505090);
+}

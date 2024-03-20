@@ -1,12 +1,14 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import SimpleMap from "./components/maps/SimpleMap";
-import Header from "./components/Header";
+import styles from "@/page.module.scss";
+import SimpleMap from "@/components/maps/SimpleMap";
+import Header from "@/components/Header/Header";
+import Search from "@/components/Search/Search";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <Search />
       <SimpleMap />
     </>
     // <main className={styles.main}>
