@@ -5,12 +5,17 @@ import mapboxgl from "mapbox-gl";
 import MapboxLanguage from "@mapbox/mapbox-gl-language";
 import "mapbox-gl/dist/mapbox-gl.css";
 import axios from "axios";
+import style from "./Map.module.scss";
 
 // Rest of the code...
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_STYLE_ACCESS_TOKEN ?? "";
 
-export default function Map() {
+type propsType = {
+  setSelectedMarker: any;
+};
+
+export default function Map({ setSelectedMarker }: propsType) {
   const mapContainerRef = useRef(null);
 
   const setOriginalLayer = async (map: mapboxgl.Map) => {
@@ -20,6 +25,10 @@ export default function Map() {
       type: "geojson",
       data,
     });
+
+    const setMarker = () => {
+      console.log("setMarker");
+    };
 
     data.features.forEach((feature: any) => {
       // カスタムアイコンの作成
@@ -39,11 +48,25 @@ export default function Map() {
         </div>`
       );
 
+      // showDetailButtonをクリックしたら、詳細画面を表示
+
+      const showDetailButton = document.querySelector(".showDetailButton");
+      console.log(showDetailButton);
+      showDetailButton?.addEventListener("click", () => {
+        console.log("showDetailButton");
+        //setSelectedMarker(feature.properties);
+      });
+
       // マーカーを追加
       const marker = new mapboxgl.Marker(customIcon)
         .setLngLat(feature.geometry.coordinates) // ピンの位置を指定
         .setPopup(popup) // ポップアップを追加
         .addTo(map);
+
+      marker.getElement().addEventListener("click", () => {
+        // console.log(feature.properties);
+        setSelectedMarker(feature.properties);
+      });
     });
   };
 
@@ -66,7 +89,5 @@ export default function Map() {
     return () => map.remove(); // Clean up when component unmounts
   }, []);
 
-  return (
-    <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />
-  );
+  return <div className={style.mapContainer} ref={mapContainerRef} />;
 }

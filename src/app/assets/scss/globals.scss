@@ -1,5 +1,10 @@
 :root {
   --max-width: 1100px;
+  --web-content-width: 450px;
+  --header-height: 72px;
+  --ui-size-sm: 36px;
+  --ui-size-md: 44px;
+
   --space-size-xs: 4px;
   --space-size-sm: 8px;
   --space-size-md: 16px;
@@ -15,10 +20,8 @@
   --color-gray01: #bbbbbb;
   --color-black: #190d09;
   --color-white: #ffffff;
+  --color-sub01: #fff7e2;
   --color-sub02: #ff8a70;
-
-  --ui-size-sm: 36px;
-  --ui-size-md: 44px;
 
   --font-size-xs: 12px;
   --font-size-sm: 14px;
@@ -35,6 +38,17 @@ body {
 
 body {
   color: var(--color-black);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: bold;
 }
 
 a {
