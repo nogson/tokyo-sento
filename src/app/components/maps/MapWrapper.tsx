@@ -2,17 +2,24 @@
 
 import Map from "@/components/maps/Map";
 import Detail from "@/components/Detail/Detail";
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 
 const MapWrapper = () => {
   const [selectedMarker, setSelectedMarker] = useState(null);
 
-  return (
+  useEffect(() => {
+    console.log(selectedMarker);
+  }, [selectedMarker]);
+
+return (
     <div>
-      <Detail selectedMarker={selectedMarker} />
-      <Map setSelectedMarker={setSelectedMarker} />
+        {selectedMarker !== null && <Detail selectedMarker={selectedMarker} />}
+        <Map
+            setSelectedMarker={setSelectedMarker}
+            selectedMarker={selectedMarker}
+        />
     </div>
-  );
+);
 };
 
 export default MapWrapper;
