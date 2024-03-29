@@ -1,480 +1,251 @@
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "美保湯",
-        "address": "立川市羽衣町1-2-18",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.42113818775846,
-          35.69789145537179
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "松の湯",
-        "address": "八王子市小門町20",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.32537705888018,
-          35.65974988642962
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "稲荷湯",
-        "address": "八王子市子安町1-27-20",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.34116085239924,
-          35.65282069357117
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "大蔵湯",
-        "address": "町田市木曽町522",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.42996509729153,
-          35.56191853137655
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.38098341079393,
-          35.710312964080245
-        ]
-      },
-      "properties": {
-        "name": "富士見湯",
-        "address": "昭島市中神町12-60",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.39054611256262,
-          35.70201054743573
-        ]
-      },
-      "properties": {
-        "name": "昭和湯",
-        "address": "昭島市玉川町4丁目3−7",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.3879509,
-          35.7019514
-        ]
-      },
-      "properties": {
-        "name": "三光湯",
-        "address": "昭島市東町4丁目11−1",
-        "business_hours": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.4052181,
-          35.7447062
-        ]
-      },
-      "properties": {
-        "name": "砂川湯",
-        "address": "武蔵村山市学園3丁目98-1",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.4302805,
-          35.7373585
-        ]
-      },
-      "properties": {
-        "name": "富士見湯健康セントー",
-        "address": "東大和市南街6-1-25",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.4164515683865,
-          35.70350514390856
-        ]
-      },
-      "properties": {
-        "name": "立川湯屋敷 梅の湯",
-        "address": "立川市高松町3-13-2",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          139.43005719888467,
-          35.561955811584376
-        ]
-      },
-      "properties": {
-        "name": "大蔵湯",
-        "address": "町田市木曽町522",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "松見湯",
-        "address": "立川市羽衣町1-8-12",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.42566038030867,
-          35.69648534195903
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "鳩の湯",
-        "address": "国立市東2-8",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.45210999347887,
-          35.694848816327095
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "旭湯",
-        "address": "府中市宮西町3-6-2",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.4741457776758,
-          35.67177685008829
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "桜湯",
-        "address": "府中市宮町1-23-3",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.48194787407135,
-          35.67096257245758
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "桃の湯",
-        "address": "国分寺市東元町3-1-20",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.4809284651256,
-          35.69386586913352
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "松の湯",
-        "address": "府中市新町3-6-5",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.48777606457026,
-          35.69248148023122
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ぬくい湯",
-        "address": "小金井市貫井北町3-4-4砂川湯",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.49721595292016,
-          35.70720412493701
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "神明湯",
-        "address": "東大和市新堀1−1432−59",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.449513012848,
-          35.73989300602868
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "栄湯",
-        "address": "小平市小川西町3-26-4"
-      },
-      "geometry": {
-        "coordinates": [
-          139.46375335932407,
-          35.7404555802445
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "桜湯",
-        "address": "東村山市萩山町3-15-8",
-        "business_hours": {
-          "weekdays": "14:00-23:00",
-          "holiday": "14:00-23:00"
-        },
-        "holiday": "friday"
-      },
-      "geometry": {
-        "coordinates": [
-          139.4725748278771,
-          35.745911209744094
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "庚申湯",
-        "address": "芝久保町1-13-2"
-      },
-      "geometry": {
-        "coordinates": [
-          139.52845574033017,
-          35.72276487482961
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "藤の湯",
-        "address": "府中市朝日町2-27-20"
-      },
-      "geometry": {
-        "coordinates": [
-          139.51855688149112,
-          35.67681383643935
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "第二喜多の湯",
-        "address": "東久留米市幸町1-5-10"
-      },
-      "geometry": {
-        "coordinates": [
-          139.52616576367592,
-          35.759870803583865
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "源の湯",
-        "address": "東久留米市東本町7 -6"
-      },
-      "geometry": {
-        "coordinates": [
-          139.53335191654025,
-          35.762348893201874
-        ],
-        "type": "Point"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "みどり湯",
-        "address": "西東京市ひばりが丘1-14-2"
-      },
-      "geometry": {
-        "coordinates": [
-          139.54267291531687,
-          35.75118600277884
-        ],
-        "type": "Point"
-      },
-      "id": 25
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "ゆパウザひばり",
-        "address": "西東京市谷戸町3-17-8"
-      },
-      "geometry": {
-        "coordinates": [
-          139.5434171436895,
-          35.74817300613459
-        ],
-        "type": "Point"
-      }
-    }
-  ]
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "COCOFURO（ココフロ）かが浴場",
+				"description": "王子の駅から旧岩槻街道の坂をのぼった先にある地元の「加賀浴場」が、リニューアルして「COCOFURO かが浴場」として再出発しました。奥飛騨天然湯の「華の湯」や厳選された生薬・漢方を使用した「彩の湯」、そして90cmの深さを誇る「冷水風呂」の他に、爆風×音楽×蒸気の「爆風ミュージックロウリュ」や静寂の中で蒸気に包まれる「サイレントロウリュ」のサウナもお楽しみいただけます。さまざまな世代に愛される機能的でカジュアルな「COCOFURO かが浴場」をぜひご利用ください。",
+				"address": "北区王子本町2-23-9 2階",
+				"businessHours": "06:00-24:00",
+				"holiday": "3、5、9、11月の第3火曜日",
+				"features": [
+					"銭湯",
+					"電気風呂",
+					"午前営業",
+					"水風呂",
+					"薬湯"
+				],
+				"station": "王子",
+				"homepage": "https://cocofuro.com/kagayokujo/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.7320659190479,
+					35.755793538965165
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "三の輪湯",
+				"description": "中井駅から徒歩約400mの場所にあるこの銭湯は、赤レンガの外観で目立ちます。女湯は古代ローマの宮廷風のタイルアート、男湯はヨーロッパ風庭園風景のタイル画が特徴です。ジャグジー風呂や電気風呂、寝湯などさまざまな種類の浴槽を楽しめます。地元の方や学生など、幅広い年齢層に親しまれています。この銭湯は1984年に開店し、地域に愛されてきました。",
+				"address": "新宿区上落合3-31-2",
+				"businessHours": "15:30−25:00",
+				"holiday": "月曜",
+				"features": [
+					"サウナ",
+					"水風呂"
+				],
+				"station": "中井",
+				"homepage": ""
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.682024055087,
+					35.713946863636444
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "大蔵湯",
+				"description": "2016年12月にリニューアルオープンした大蔵湯は、地域の皆様に「わが町のもうひとつの風呂場」と感じていただけるような銭湯です。良質な天然井戸水を軟水化して使用し、大きな浴槽でシンプルに提供しています。静寂と癒しの空間を提供することを目指しています。",
+				"address": "町田市木曽町522",
+				"businessHours": "14:00-23:00",
+				"holiday": "金曜",
+				"features": [
+					"サウナ",
+					"水風呂",
+					"軟水風呂"
+				],
+				"station": "古渕,町田",
+				"homepage": "http://www.ookurayu.com/index.html"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.4300250127541,
+					35.56194708369545
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "松の湯",
+				"description": "2019年9月6日に、大幅な改装が行われ、新たな魅力が加わりました。高濃度炭酸泉の導入や、ジェット、座風呂、水風呂、サウナの設置などが行われました。リニューアル前から人気のある露天風呂では、日替わりで薬湯を楽しむことができます。2階にはマッサージ店が営業しており、また、マンガコーナーも設けられています。",
+				"address": "八王子市小門町２０",
+				"businessHours": "14:00-23:30",
+				"holiday": "火曜",
+				"features": [
+					"露天風呂",
+					"サウナ",
+					"薬湯",
+					"水風呂",
+					"炭酸泉",
+					"漫画"
+				],
+				"station": "八王子",
+				"homepage": ""
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.32559861823006,
+					35.66304480693949
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "稲荷湯",
+				"description": "八王子駅から徒歩５分の場所に位置するこの施設は、１階が温泉旅館風、２階が南欧リゾート風の浴室で、男女が日替わりで利用できます。ジェット、バイブラ、電気風呂、水風呂、薬湯、露天風呂、サウナ、立ちシャワーなど、計１７種類のお風呂を楽しむことができます。また、薬湯は日替わりで提供されます。",
+				"address": "八王子市子安町1-27-20",
+				"businessHours": "14:00-23:30(日曜は12:00-23:30)",
+				"holiday": "水曜（祝日は翌日休）",
+				"features": [
+					"露天風呂",
+					"薬湯",
+					"サウナ",
+					"水風呂"
+				],
+				"station": "八王子",
+				"homepage": ""
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.34032184038156,
+					35.667308814305905
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "第二喜多の湯",
+				"description": "八王子駅からほど近い場所に位置するこの施設は、ジェット、バイブラ、電気風呂、水風呂、サウナ、立ちシャワーなどが充実しています。サウナは無料でご利用いただけ、特に冷たい水風呂が好評です。ロビーは広々としており、リラックスできるスペースが用意されています。まるで温泉にいるかのような、大きなお風呂で心身を癒してください。",
+				"address": "東久留米市幸町1-5-10",
+				"businessHours": "15:00−22:00",
+				"holiday": "不定休",
+				"features": [
+					"サウナ",
+					"水風呂"
+				],
+				"station": "東久留米",
+				"homepage": ""
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.52615712625249,
+					35.76011981384509
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "源の湯",
+				"description": "東久留米駅北口から徒歩3分の場所にある銭湯です。室内浴場のみで、特に森林浴ミスティ風呂がおすすめです。その他にも、ジェット、バイブラ、水風呂、立ちシャワーなどがあります。カウンター前には椅子があり、ちょっとした休憩も可能です。この建物は1990年(平成2年)4月にオープンしました。",
+				"address": "東久留米市東本町7-6 ",
+				"businessHours": "15:30-23:00",
+				"holiday": "月曜",
+				"features": [
+					"サウナ",
+					"水風呂"
+				],
+				"station": "東久留米",
+				"homepage": ""
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.5327679513846,
+					35.76309229397042
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "庚申湯",
+				"description": "東京・西東京市で55年続く庚申湯は、懐かしさと明るさを兼ね備えた銭湯です。庚申信仰に由来する癒しの空間を提供し、週替わりで異なる浴室を楽しめます。富士の湯ではジェットバスや露天風呂などがあり、絹の湯では超微細気泡風呂を含む施設が備わっています。古き良き雰囲気と新しさを同時に味わえ、銭湯ランナーの方々も歓迎されています。また、庚申塔の見守るこの銭湯で、健康と幸せを願いながら、心身をリフレッシュしてください。",
+				"address": "西東京市芝久保町1-13-2",
+				"businessHours": "15:00-23:00",
+				"holiday": "月曜・第1火曜",
+				"features": [
+					"露天風呂",
+					"サウナ",
+					"水風呂",
+					"薬湯"
+				],
+				"station": "田無",
+				"homepage": "http://www.koushin-yu.com/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.52842126857914,
+					35.72290766656516
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "ゆパウザひばり",
+				"description": "ジェット、バイブラ、電気風呂、漢方薬湯、冷水風呂、サウナ（遠赤外線＆スチーム）、そして露天風呂などが備わっています。薬湯は毎日異なるアプローチで提供されます。井戸水は地下１００ｍから汲み上げ、水風呂は常に新鮮な井戸水を掛け流しています。また、男女の浴室は毎週入れ替わりますので、常に新しい体験が待っています。",
+				"address": "西東京市谷戸町3-17-8",
+				"businessHours": "15:30-23:30(日曜・祝日13:00-23:30)",
+				"holiday": "",
+				"features": [
+					"露天風呂",
+					"サウナ",
+					"水風呂",
+					"薬湯"
+				],
+				"station": "ひばりヶ丘",
+				"homepage": "http://www.yu-pauza.com/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.54338763974428,
+					35.74857576516909
+				]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"name": "みどり湯",
+				"description": "この宮造りの銭湯は、ジェット、バイブラ、電気風呂、水風呂、薬湯、サウナ、立ちシャワーなどの設備を備えています。露天風呂は岩風呂と寝風呂型の２つがあり、男女浴室が週替わりなので両方を楽しむことができます。また、浴室にはペンキ絵が施されており、趣があります。",
+				"address": "西東京市ひばりが丘1-14-2",
+				"businessHours": "15:00-23:30(日曜・祝日14:00-23:00)",
+				"holiday": "",
+				"features": [
+					"露天風呂",
+					"サウナ",
+					"水風呂",
+					"薬湯"
+				],
+				"station": "ひばりヶ丘",
+				"homepage": "https://midoriyu.main.jp/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					139.54417082250416,
+					35.75508000020457
+				]
+			}
+		}
+	]
 }

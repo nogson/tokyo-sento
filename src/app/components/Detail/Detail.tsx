@@ -3,12 +3,22 @@ import styles from "@/components/Detail/Detail.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Map from "@/components/maps/Map";
+import { MarkerPropsType } from "@/types/Map";
+import { Feature, FeatureCollection } from "geojson";
 
 type propsType = {
   selectedMarker: any;
 };
 
 const Detail = ({ selectedMarker }: propsType) => {
+  const properties = selectedMarker.properties;
+  const geometry = selectedMarker.geometry;
+
+  const abc: FeatureCollection = {
+    type: "FeatureCollection",
+    features: [selectedMarker],
+  };
+
   return (
     <section className={styles.detailWrap}>
       <div className={styles.detailHead}></div>
@@ -26,28 +36,21 @@ const Detail = ({ selectedMarker }: propsType) => {
         </div>
         <div className={styles.detailContent}>
           <div className={styles.detailContentHead}>
-            <h1>天国温泉</h1>
+            <h1>{properties.name}</h1>
           </div>
-          <p>
-            2023年5月16日オープン。お風呂は奥飛騨の天然湯の花を使用した「華の湯・電気風呂」、
-            厳選した生薬・入浴剤等を使用した変わり湯の「彩湯」、深さ90cmの冷水風呂の3種類。サウナは「サイレントロウリュ」と「爆風ミュージックロウリュ」を提供し、サウナの後は地下水シャワーと外気浴スペースでリフレッシュ。ロビーでは生ビール・各種ドリンク・ソフトクリーム等をご用意し、コンパクトながら身近な憩いの場としてご利用いただけます。
-          </p>
+          <p>{properties.description}</p>
           <div className={styles.detailShopInfo}>
             <dl>
               <dt>住所</dt>
-              <dd>足立区関原3-20-14</dd>
+              <dd>{properties.address}</dd>
             </dl>
             <dl>
               <dt>営業時間</dt>
-              <dd>
-                平日14:00〜24:00
-                <br />
-                土曜・日曜・祝日8時〜24時
-              </dd>
+              <dd>{properties.businessHours.replace("-", "〜")}</dd>
             </dl>
             <dl>
               <dt>定休日</dt>
-              <dd>不定休</dd>
+              <dd>{properties.holiday}</dd>
             </dl>
             <dl>
               <dt>料金</dt>
@@ -55,18 +58,17 @@ const Detail = ({ selectedMarker }: propsType) => {
             </dl>
           </div>
           <div className={styles.detailShopFeature}>
-            <span>サウナ</span>
-            <span>露天風呂</span>
-            <span>岩盤浴</span>
-            <span>ジェットバス</span>
-            <span>水風呂</span>
-            <span>薬湯</span>
-            <span>寝湯</span>
-            <span>リラックスルーム</span>
+            {properties.features?.map((feature: string, index: number) => (
+              <span key={index}>{feature}</span>
+            ))}
           </div>
           <div className={styles.detailMap}>
             <div className={styles.detailShopMap}>
-              <Map />
+              <Map
+                center={geometry.coordinates}
+                layerData={abc}
+                canSelectMarker={false}
+              />
             </div>
             <div className={styles.detailShopMapLink}>
               <Link href="/">アプリの地図で見る</Link>

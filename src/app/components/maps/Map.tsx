@@ -10,19 +10,25 @@ import React, {
 import mapboxgl from "mapbox-gl";
 import MapboxLanguage from "@mapbox/mapbox-gl-language";
 import "mapbox-gl/dist/mapbox-gl.css";
-import axios from "axios";
 import style from "./Map.module.scss";
-
-// Rest of the code...
+import { FeatureCollection, Feature } from "geojson";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_STYLE_ACCESS_TOKEN ?? "";
 
-type propsType = {
-  setSelectedMarker: Dispatch<SetStateAction<null>>;
-  selectedMarker: any;
+type PropsType = {
+  selectedMarker?: Feature | null;
+  setSelectedMarker?: Dispatch<SetStateAction<null>>;
+  layerData?: FeatureCollection;
+  center?: [number, number];
+  canSelectMarker?: boolean;
 };
-
-export default function Map({ selectedMarker, setSelectedMarker }: propsType) {
+export default function Map({
+  selectedMarker = null,
+  setSelectedMarker = () => {},
+  layerData,
+  center = [139.7670516, 35.6811673],
+  canSelectMarker = true,
+}: PropsType) {
   const mapContainerRef = useRef(null);
 
   const removeSelectedMarker = () => {
@@ -35,14 +41,14 @@ export default function Map({ selectedMarker, setSelectedMarker }: propsType) {
   };
 
   const setOriginalLayer = async (map: mapboxgl.Map) => {
-    const response = await axios.get("/assets/json/map.geojson");
-    const data = response.data;
+    if (!layerData) return;
+
     map.addSource("publicBath", {
       type: "geojson",
-      data,
+      data: layerData,
     });
 
-    data.features.forEach((feature: any) => {
+    layerData.features.forEach((feature: any) => {
       // カスタムアイコンの作成
       const customIcon = document.createElement("div");
       // CSS クラスを適用
@@ -62,13 +68,13 @@ export default function Map({ selectedMarker, setSelectedMarker }: propsType) {
         // mapをクリックした位置に移動
         map.flyTo({
           center: feature.geometry.coordinates,
-          speed: 1,
-          curve: 1,
+          speed: 0.5,
+          curve: 0.5,
           easing(t: number) {
             return t;
           },
         });
-        setSelectedMarker(feature.properties);
+        setSelectedMarker(feature);
 
         // 選択中のマーカーのCSSクラスを削除
         removeSelectedMarker();
@@ -86,8 +92,11 @@ export default function Map({ selectedMarker, setSelectedMarker }: propsType) {
       // マーカーを追加
       const marker = new mapboxgl.Marker(customIcon)
         .setLngLat(feature.geometry.coordinates) // ピンの位置を指定
-        .setPopup(popup) // ポップアップを追加
         .addTo(map);
+
+      if (canSelectMarker) {
+        marker.setPopup(popup); // ポップアップを追加
+      }
     });
   };
 
@@ -97,9 +106,10 @@ export default function Map({ selectedMarker, setSelectedMarker }: propsType) {
       style:
         process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL ??
         "mapbox://styles/mapbox/streets-v12",
-      center: [139.7670516, 35.6811673],
+      center,
       zoom: 10,
     });
+
     map.on("load", () => {
       setOriginalLayer(map);
     });
@@ -117,7 +127,7 @@ export default function Map({ selectedMarker, setSelectedMarker }: propsType) {
     map.addControl(language);
 
     return () => map.remove(); // Clean up when component unmounts
-  }, []);
+  }, [layerData]);
 
   return <div className={style.mapContainer} ref={mapContainerRef} />;
 }

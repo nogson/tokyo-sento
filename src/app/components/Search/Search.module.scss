@@ -1,12 +1,25 @@
 .search {
+  width: 350px;
   position: fixed;
-  bottom: 0;
   right: var(--space-size-xl);
+  bottom: -160px;
   background: #fff;
   z-index: 100;
   padding: var(--space-size-md) var(--space-size-md);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  // bottomの移動をアニメーションで行うため、transitionを指定
+  transition: bottom 0.3s;
+}
+
+.searchOpen {
+  bottom: 0;
+}
+
+.searchTitle {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  margin-bottom: var(--space-size-md);
 }
 
 .searchInput {
@@ -16,15 +29,47 @@
   gap: var(--space-size-sm);
   margin-bottom: var(--space-size-md);
   width: 100%;
+  > div:last-child {
+    flex: 1;
+  }
 }
 
 .searchOptions {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-size-sm);
 }
 
 .button {
   width: 100%;
   margin-top: var(--space-size-md);
+}
+
+.searchInputWrapper {
+  width: 100%;
+  border: 1px solid var(--color-gray01);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+
+  input {
+    border: none;
+    background: none;
+    width: auto;
+    flex-grow: 1;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 24px;
+    padding: 0;
+    color: var(--color-gray01);
+  }
 }

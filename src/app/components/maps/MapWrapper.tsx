@@ -2,24 +2,44 @@
 
 import Map from "@/components/maps/Map";
 import Detail from "@/components/Detail/Detail";
-import { use, useEffect, useState } from "react";
+import Search from "@/components/Search/Search";
+
+import { Suspense, useEffect, useState } from "react";
+import { getGeoJson } from "@/lib/request";
+import { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 
 const MapWrapper = () => {
   const [selectedMarker, setSelectedMarker] = useState(null);
+  const [layerData, setLayerData] = useState<
+    FeatureCollection<Geometry, GeoJsonProperties>
+  >({
+    type: "FeatureCollection",
+    features: [],
+  });
+
+  const getLayerData = async () => {
+    const response = await getGeoJson();
+    setLayerData(response.data);
+  };
 
   useEffect(() => {
-    console.log(selectedMarker);
-  }, [selectedMarker]);
+    getLayerData();
+  }, []);
 
-return (
-    <div>
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <div>
+        <Search setLayerData={setLayerData} />
+        {/* 詳細情報を表示 */}
         {selectedMarker !== null && <Detail selectedMarker={selectedMarker} />}
         <Map
-            setSelectedMarker={setSelectedMarker}
-            selectedMarker={selectedMarker}
+          layerData={layerData}
+          setSelectedMarker={setSelectedMarker}
+          selectedMarker={selectedMarker}
         />
-    </div>
-);
+      </div>
+    </Suspense>
+  );
 };
 
 export default MapWrapper;
