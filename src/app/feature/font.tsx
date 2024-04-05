@@ -1,6 +1,7 @@
-import { BIZ_UDGothic, M_PLUS_Rounded_1c } from "next/font/google";
+import { IBM_Plex_Sans_JP } from "next/font/google";
 
-export const baseFont = BIZ_UDGothic({
+export const baseFont = IBM_Plex_Sans_JP({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500","700"],
 });
+
