@@ -3,7 +3,11 @@ import "@/common/scss/reset.scss";
 import "@/common/scss/globals.scss";
 import "@/common/scss/common.scss";
 import "@/common/scss/map.scss";
+import "@mantine/core/styles.css";
+
 import { baseFont } from "src/features/font";
+import { MantineProvider } from "@mantine/core";
+import { theme } from "@/features/theme";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={baseFont.className}>{children}</body>
+      <head></head>
+      <body className={baseFont.className}>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
+      </body>
     </html>
   );
 }

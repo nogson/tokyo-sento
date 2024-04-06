@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "@/components/Search/Search.module.scss";
-import { getGeoJson } from "@/lib/request";
+import { getGeoJson } from "@/lib/request/map";
 import { CgClose } from "react-icons/cg";
 
 type PropsType = {

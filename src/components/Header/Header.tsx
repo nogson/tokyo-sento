@@ -15,8 +15,8 @@ const Header = () => {
             <Link href="/news">News</Link>
           </li>
           <li>
-            <Link href="/news">
-              <Image src={IconMyPage} alt="Next.js Logo" priority />
+            <Link href="/login">
+              <Image src={IconMyPage} alt="My page" priority />
             </Link>
           </li>
         </ul>

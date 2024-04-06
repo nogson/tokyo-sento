@@ -1,4 +1,6 @@
 import axios from "axios";
+import request from "@/lib/request/request";
+import ENDPOINT from "@/lib/request/endpoint";
 type GetGeoJsonProps = {
   keyword?: string;
   features?: string[];
@@ -8,7 +10,7 @@ export async function getGeoJson({
   keyword,
   features,
 }: GetGeoJsonProps = {}): Promise<any> {
-  const response = await axios.get("/assets/json/map.geojson");
+  const response = await request.get(ENDPOINT.GET_GIOJSON);
   const data = response.data.features.filter((feature: any) => {
     if (keyword) {
       // 複数のスペースを1つのスペースに変換

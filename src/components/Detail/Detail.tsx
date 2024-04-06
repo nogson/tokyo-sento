@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/components/Detail/Detail.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Map from "@/components/maps/Map";
+import Map from "@/components/Maps/Map";
 import { MarkerPropsType } from "@/types/Map";
 import { Feature, FeatureCollection } from "geojson";
 

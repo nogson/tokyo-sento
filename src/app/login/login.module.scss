@@ -1,0 +1,40 @@
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginContent {
+  width: var(--web-content-width);
+  h1 {
+    text-align: center;
+    margin-bottom: var(--space-size-lg);
+  }
+}
+
+.loginInner {
+  padding: var(--space-size-xxxl);
+  border: 1px solid var(--color-gray03);
+  border-radius: 8px;
+}
+
+.loginRegister {
+  text-align: center;
+  margin-top: var(--space-size-lg);
+  padding-top: var(--space-size-lg);
+  border-top: 1px solid var(--color-gray03);
+  font-size: var(--font-size-xs);
+  a {
+    font-size: var(--font-size-xs);
+    padding-left: var(--space-size-sm);
+  }
+}
+
+.loginTitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--space-size-lg);
+  font-weight: bold;
+}
