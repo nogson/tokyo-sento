@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./assets/scss/reset.scss";
-import "./assets/scss/globals.scss";
-import "./assets/scss/common.scss";
-import "./assets/scss/map.scss";
-import { baseFont } from "@/feature/font";
+import "@/common/scss/reset.scss";
+import "@/common/scss/globals.scss";
+import "@/common/scss/common.scss";
+import "@/common/scss/map.scss";
+import { baseFont } from "src/features/font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
