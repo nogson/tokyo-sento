@@ -98,7 +98,7 @@ table {
 }
 
 *:focus {
-  outline: none;
+  outline: none !important;
 }
 
 input::placeholder {

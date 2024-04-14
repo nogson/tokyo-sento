@@ -1,6 +1,7 @@
 import axios from "axios";
 import request from "@/lib/request/request";
 import ENDPOINT from "@/lib/request/endpoint";
+import { notifications } from "@mantine/notifications";
 type GetGeoJsonProps = {
   keyword?: string;
   features?: string[];
@@ -11,7 +12,7 @@ export async function getGeoJson({
   features,
 }: GetGeoJsonProps = {}): Promise<any> {
   const response = await request.get(ENDPOINT.GET_GIOJSON);
-  const data = response.data.features.filter((feature: any) => {
+  const data = response!.data.features.filter((feature: any) => {
     if (keyword) {
       // 複数のスペースを1つのスペースに変換
       // 全角スペースを半角スペースに変換
@@ -36,7 +37,12 @@ export async function getGeoJson({
 
   // featuresを上書き
   if (data.length !== 0) {
-    response.data.features = data;
+    response!.data.features = data;
+  } else {
+    notifications.show({
+      message: "該当する銭湯がありませんでした😔",
+      withCloseButton: false,
+    });
   }
 
   return response;

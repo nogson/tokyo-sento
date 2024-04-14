@@ -16,6 +16,9 @@
 .h-screen {
   height: 100vh;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .input-text {
   height: 44px;
   box-sizing: border-box;
@@ -31,6 +34,7 @@
   font-size: var(--font-size-sm);
 }
 
+// button
 .button-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -76,3 +80,11 @@
   }
 }
 
+// modal
+.modal-button-wrapper {
+  display: flex;
+  justify-content: end;
+  gap: var(--space-size-md);
+  padding-top: var(--space-size-md);
+  border-top: 1px solid var(--color-gray03);
+}

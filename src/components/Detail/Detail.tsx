@@ -5,6 +5,7 @@ import Link from "next/link";
 import Map from "@/components/Maps/Map";
 import { MarkerPropsType } from "@/types/Map";
 import { Feature, FeatureCollection } from "geojson";
+import Slider from "./Slider";
 
 type propsType = {
   selectedMarker: any;
@@ -19,21 +20,12 @@ const Detail = ({ selectedMarker }: propsType) => {
     features: [selectedMarker],
   };
 
+
   return (
     <section className={styles.detailWrap}>
       <div className={styles.detailHead}></div>
       <div className={styles.detail}>
-        <div>
-          <Image
-            className="w-full h-auto"
-            src="/assets/images/detail/detail_image01.png"
-            alt="Search"
-            width={0}
-            height={0}
-            sizes="100vw"
-            priority
-          />
-        </div>
+        <Slider />
         <div className={styles.detailContent}>
           <div className={styles.detailContentHead}>
             <h1>{properties.name}</h1>

@@ -1,27 +1,43 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "@/components/Header/Header.module.scss";
 import Image from "next/image";
 import Logo from "@/common/images/logo.svg";
-import IconMyPage from "@/common/images/icon_mypage.svg";
 import Link from "next/link";
+import Account from "./Account";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const pathname = usePathname();
+  const { push } = useRouter();
+
   return (
-    <header className={styles.header}>
-      <Image src={Logo} alt="Logo" priority />
-      <nav className={styles.nav}>
-        <ul>
-          <li>
-            <Link href="/news">News</Link>
-          </li>
-          <li>
-            <Link href="/login">
-              <Image src={IconMyPage} alt="My page" priority />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <>
+      <header
+        className={styles.header}
+        onMouseLeave={() => setIsTooltipOpen(false)}
+      >
+        <Image src={Logo} alt="Logo" priority onClick={() => push("/")} />
+        {pathname !== "/login" && (
+          <nav className={styles.nav}>
+            <ul>
+              <li>
+                <Link href="/news">News</Link>
+              </li>
+
+              <li>
+                <Account
+                  isTooltipOpen={isTooltipOpen}
+                  setIsTooltipOpen={setIsTooltipOpen}
+                />
+              </li>
+            </ul>
+          </nav>
+        )}
+      </header>
+    </>
   );
 };
 

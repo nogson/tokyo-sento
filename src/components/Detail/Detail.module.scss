@@ -111,6 +111,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 10;
   width: var(--web-content-width);
   background: rgba(255, 255, 255, 0.95);
   padding: var(--space-size-lg) var(--space-size-md);
