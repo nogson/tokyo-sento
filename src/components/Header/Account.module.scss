@@ -49,3 +49,16 @@
     transform: translateY(0);
   }
 }
+
+.nickName {
+  text-align: center;
+  padding: var(--space-size-sm) var(--space-size-md) 0;
+}
+
+.email {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  padding: 0 var(--space-size-md) var(--space-size-xs);
+
+}

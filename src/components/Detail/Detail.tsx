@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "@/components/Detail/Detail.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 import Map from "@/components/Maps/Map";
 import { MarkerPropsType } from "@/types/Map";
 import { Feature, FeatureCollection } from "geojson";
 import Slider from "./Slider";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 type propsType = {
   selectedMarker: any;
@@ -20,7 +20,6 @@ const Detail = ({ selectedMarker }: propsType) => {
     features: [selectedMarker],
   };
 
-
   return (
     <section className={styles.detailWrap}>
       <div className={styles.detailHead}></div>
@@ -33,10 +32,6 @@ const Detail = ({ selectedMarker }: propsType) => {
           <p>{properties.description}</p>
           <div className={styles.detailShopInfo}>
             <dl>
-              <dt>住所</dt>
-              <dd>{properties.address}</dd>
-            </dl>
-            <dl>
               <dt>営業時間</dt>
               <dd>{properties.businessHours.replace("-", "〜")}</dd>
             </dl>
@@ -45,9 +40,25 @@ const Detail = ({ selectedMarker }: propsType) => {
               <dd>{properties.holiday}</dd>
             </dl>
             <dl>
+              <dt>最寄り駅</dt>
+              <dd>{properties.station}</dd>
+            </dl>
+            <dl>
+              <dt>住所</dt>
+              <dd>{properties.address}</dd>
+            </dl>
+            <dl>
               <dt>料金</dt>
               <dd>540円</dd>
             </dl>
+            {properties.homepage && (
+              <dl>
+                <dt>ホームページ</dt>
+                <dd>
+                  <Link href={properties.homepage}>{properties.homepage}</Link>
+                </dd>
+              </dl>
+            )}
           </div>
           <div className={styles.detailShopFeature}>
             {properties.features?.map((feature: string, index: number) => (
@@ -62,9 +73,7 @@ const Detail = ({ selectedMarker }: propsType) => {
                 canSelectMarker={false}
               />
             </div>
-            <div className={styles.detailShopMapLink}>
-              <Link href="/">アプリの地図で見る</Link>
-            </div>
+            <div className={styles.detailShopMapLink}></div>
           </div>
           <div className={styles.detailCustomerVoice}>
             <h2>利用者の声</h2>

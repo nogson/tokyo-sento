@@ -34,6 +34,9 @@
 }
 
 .detailShopInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-size-sm);
   margin-top: var(--space-size-lg);
   dl {
     display: flex;

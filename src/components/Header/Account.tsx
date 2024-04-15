@@ -53,21 +53,28 @@ const Account = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
             isTooltipOpen ? styles.tooltipShow : ""
           }`}
         >
-          <ul>
-            {userData ? (
-              <li onClick={open}>
-                <FiLogOut />
-                <span>ログアウト</span>
-              </li>
-            ) : (
+          {userData ? (
+            <>
+              <div className={styles.nickName}>{userData.nickName}</div>
+              <div className={styles.email}>{userData.email}</div>
+
+              <ul>
+                <li onClick={open}>
+                  <FiLogOut />
+                  <span>ログアウト</span>
+                </li>
+              </ul>
+            </>
+          ) : (
+            <ul>
               <li>
                 <FiLogIn />
                 <span>
                   <Link href="/login">ログイン</Link>
                 </span>
               </li>
-            )}
-          </ul>
+            </ul>
+          )}
         </nav>
       </div>
       <Modal

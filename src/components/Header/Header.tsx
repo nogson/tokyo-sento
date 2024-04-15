@@ -19,14 +19,18 @@ const Header = () => {
         className={styles.header}
         onMouseLeave={() => setIsTooltipOpen(false)}
       >
-        <Image src={Logo} alt="Logo" priority onClick={() => push("/")} />
+        <Link href="/">
+          <Image src={Logo} alt="Logo" priority onClick={() => push("/")} />
+        </Link>
         {pathname !== "/login" && (
           <nav className={styles.nav}>
             <ul>
               <li>
                 <Link href="/news">News</Link>
               </li>
-
+              <li>
+                <Link href="/about">About</Link>
+              </li>
               <li>
                 <Account
                   isTooltipOpen={isTooltipOpen}
