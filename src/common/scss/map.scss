@@ -1,4 +1,3 @@
-
 // マップ上のピン
 .custom-marker {
   background: url(/assets/images/publicBathIcon.svg) no-repeat center center;
@@ -40,6 +39,10 @@
     font-size: var(--font-size-xs);
     font-weight: normal;
     margin-right: var(--space-size-xs);
+  }
+  .unknown {
+    @extend .open;
+    background-color: var(--color-gray01);
   }
 }
 

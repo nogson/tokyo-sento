@@ -33,11 +33,13 @@ const Detail = ({ selectedMarker }: propsType) => {
           <div className={styles.detailShopInfo}>
             <dl>
               <dt>営業時間</dt>
-              <dd>{properties.businessHours.replace("-", "〜")}</dd>
+              <dd>
+                {properties.businessHours.replace(",", "〜").replace(",", "")}
+              </dd>
             </dl>
             <dl>
               <dt>定休日</dt>
-              <dd>{properties.holiday}</dd>
+              <dd>{properties.holiday.replace(",", " ")}</dd>
             </dl>
             <dl>
               <dt>最寄り駅</dt>

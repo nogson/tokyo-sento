@@ -12,6 +12,7 @@ import MapboxLanguage from "@mapbox/mapbox-gl-language";
 import "mapbox-gl/dist/mapbox-gl.css";
 import style from "./Map.module.scss";
 import { FeatureCollection, Feature } from "geojson";
+import { isOpen } from "@/lib/utils/util";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_STYLE_ACCESS_TOKEN ?? "";
 
@@ -57,9 +58,20 @@ export default function Map({
       // popupを作成
       const divElement = document.createElement("div");
       const buttonElement = document.createElement("div");
-
+      const open = isOpen(
+        feature.properties.businessHours,
+        feature.properties.holiday
+      );
       // TODO 営業中かどうかの判定
-      divElement.innerHTML = `<h3><span class="open">営業中</span>${feature.properties.name}</h3>`;
+      let openElm = "";
+
+      if (open) {
+        openElm = `<span class="open">営業中</span>`;
+      } else {
+        openElm = `<span class="unknown">休業かも</span>`;
+      }
+
+      divElement.innerHTML = `<h3>${openElm} ${feature.properties.name}</h3>`;
       buttonElement.innerHTML = `<button class="button-primary-solid sm">詳しく見る</button>`;
       divElement.appendChild(buttonElement);
 
