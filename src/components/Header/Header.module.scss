@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+.logo {
+  line-height: 0;
+}
+
 .nav {
   margin-left: auto;
   > ul {

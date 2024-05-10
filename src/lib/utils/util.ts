@@ -33,13 +33,5 @@ export const isOpen = (time: string, holiday: string) => {
       isHoliday = day === 6;
       break;
   }
-  console.log(
-    "openTime",
-    openTime,
-    openTime <= nowTime,
-    "closeTime",
-    closeTime,
-    nowTime <= closeTime
-  );
   return openTime <= nowTime && nowTime <= closeTime && !isHoliday;
 };

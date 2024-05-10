@@ -2,6 +2,7 @@
   "type": "FeatureCollection",
   "features": [
     {
+      "id": 1,
       "type": "Feature",
       "properties": {
         "name": "COCOFURO（ココフロ）かが浴場",
@@ -19,6 +20,7 @@
       }
     },
     {
+      "id": 2,
       "type": "Feature",
       "properties": {
         "name": "三の輪湯",
@@ -36,6 +38,7 @@
       }
     },
     {
+      "id": 3,
       "type": "Feature",
       "properties": {
         "name": "大蔵湯",
@@ -53,6 +56,7 @@
       }
     },
     {
+      "id": 4,
       "type": "Feature",
       "properties": {
         "name": "松の湯",
@@ -70,13 +74,14 @@
       }
     },
     {
+      "id": 5,
       "type": "Feature",
       "properties": {
         "name": "稲荷湯",
         "description": "八王子駅から徒歩５分の場所に位置するこの施設は、１階が温泉旅館風、２階が南欧リゾート風の浴室で、男女が日替わりで利用できます。ジェット、バイブラ、電気風呂、水風呂、薬湯、露天風呂、サウナ、立ちシャワーなど、計１７種類のお風呂を楽しむことができます。また、薬湯は日替わりで提供されます。",
         "address": "八王子市子安町1-27-20",
         "businessHours": "14:00,23:30,(日曜は12:00-23:30)",
-        "holiday": "水曜（祝日は翌日休）",
+        "holiday": "水曜,（祝日は翌日休）",
         "features": ["露天風呂", "薬湯", "サウナ", "水風呂"],
         "station": "八王子",
         "homepage": ""
@@ -87,6 +92,7 @@
       }
     },
     {
+      "id": 6,
       "type": "Feature",
       "properties": {
         "name": "第二喜多の湯",
@@ -104,6 +110,7 @@
       }
     },
     {
+      "id": 7,
       "type": "Feature",
       "properties": {
         "name": "源の湯",
@@ -121,13 +128,14 @@
       }
     },
     {
+      "id": 8,
       "type": "Feature",
       "properties": {
         "name": "庚申湯",
         "description": "東京・西東京市で55年続く庚申湯は、懐かしさと明るさを兼ね備えた銭湯です。庚申信仰に由来する癒しの空間を提供し、週替わりで異なる浴室を楽しめます。富士の湯ではジェットバスや露天風呂などがあり、絹の湯では超微細気泡風呂を含む施設が備わっています。古き良き雰囲気と新しさを同時に味わえ、銭湯ランナーの方々も歓迎されています。また、庚申塔の見守るこの銭湯で、健康と幸せを願いながら、心身をリフレッシュしてください。",
         "address": "西東京市芝久保町1-13-2",
         "businessHours": "15:00,23:00",
-        "holiday": "月曜・第1火曜",
+        "holiday": "月曜,第1火曜",
         "features": ["露天風呂", "サウナ", "水風呂", "薬湯"],
         "station": "田無",
         "homepage": "http://www.koushin-yu.com/"
@@ -138,6 +146,7 @@
       }
     },
     {
+      "id": 9,
       "type": "Feature",
       "properties": {
         "name": "ゆパウザひばり",
@@ -155,6 +164,7 @@
       }
     },
     {
+      "id": 10,
       "type": "Feature",
       "properties": {
         "name": "みどり湯",
@@ -172,13 +182,14 @@
       }
     },
     {
+      "id": 11,
       "type": "Feature",
       "properties": {
         "name": "桜湯",
         "description": "久米川駅と萩山駅のちょうど中間に位置する、快適な温泉施設です。広々とした更衣室と洗い場、そして肩をほぐすマッサージ機能が自慢です。電気風呂も気持ち良く、設備も充実しています。シャンプーやボディーソープが完備され、貸しタオルもあります。久米川駅からは徒歩10分ほどで、静かな住宅街にあります。湯船は大きく、バブルジェットやジェット電気風呂も楽しめます。力強い電気風呂と心地良い湯温で、リラックスできる場所です。",
         "address": "東村山市萩山町3−15−1",
         "businessHours": "15:00,23:00",
-        "holiday": "月曜日（祝日は翌日休）",
+        "holiday": "月曜日,（祝日は翌日休）",
         "features": ["サウナ", "水風呂", "駐車場"],
         "station": "久米川",
         "homepage": ""
@@ -189,6 +200,7 @@
       }
     },
     {
+      "id": 12,
       "type": "Feature",
       "properties": {
         "name": "栄湯",
@@ -206,6 +218,7 @@
       }
     },
     {
+      "id": 13,
       "type": "Feature",
       "properties": {
         "name": "のぼり湯",
@@ -223,6 +236,7 @@
       }
     },
     {
+      "id": 14,
       "type": "Feature",
       "properties": {
         "name": "千代乃湯",
@@ -240,6 +254,7 @@
       }
     },
     {
+      "id": 15,
       "type": "Feature",
       "properties": {
         "name": "アサヒトレンド21",
@@ -257,6 +272,7 @@
       }
     },
     {
+      "id": 16,
       "type": "Feature",
       "properties": {
         "name": "春の湯",
@@ -274,6 +290,7 @@
       }
     },
     {
+      "id": 17,
       "type": "Feature",
       "properties": {
         "name": "境南浴場",
@@ -291,6 +308,7 @@
       }
     },
     {
+      "id": 18,
       "type": "Feature",
       "properties": {
         "name": "お湯どころ野川",
@@ -308,6 +326,7 @@
       }
     },
     {
+      "id": 19,
       "type": "Feature",
       "properties": {
         "name": "狛江湯",
@@ -325,6 +344,7 @@
       }
     },
     {
+      "id": 20,
       "type": "Feature",
       "properties": {
         "name": "富の湯",
@@ -339,6 +359,201 @@
       "geometry": {
         "type": "Point",
         "coordinates": [139.56953152513407, 35.64690745965005]
+      }
+    },
+    {
+      "id": 21,
+      "type": "Feature",
+      "properties": {
+        "name": "湯の森 深大湯",
+        "description": "この施設は、マンション内に位置し、3階と4階に浴場があります。軟水のような美容液入りのお風呂や、健康に良い炭酸泉風呂、そして4階からの開放感あふれる眺めが楽しめる露天風呂があります。週替わりで異なる雰囲気の2つの浴室を楽しむことができ、ジャグジーや薬湯、電気風呂なども設置されています。4階の露天風呂からは、富士山を望むことができ、お湯は肌にやさしい軟水を使用しています。駐車場（6台）と駐輪場が1階にあり、隣接地にはさらに15台分の駐車場があります。晴れた日には、美しい夕日を露天風呂から楽しむことができます。",
+        "address": "調布市深大寺北町6-17-3",
+        "businessHours": "15:00,23:00",
+        "holiday": "木曜,第3水曜",
+        "features": [
+          "露天風呂",
+          "サウナ",
+          "水風呂",
+          "薬湯",
+          "炭酸泉",
+          "駐車場"
+        ],
+        "station": "三鷹,吉祥寺,調布",
+        "homepage": "http://jindaiyu.web.fc2.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.546515, 35.67777317596655]
+      }
+    },
+    {
+      "id": 22,
+      "type": "Feature",
+      "properties": {
+        "name": "梅の湯",
+        "description": "",
+        "address": "調布市深大寺東町6-9-5",
+        "businessHours": "15:00,22:30",
+        "holiday": "月曜",
+        "features": ["露天風呂", "サウナ", "水風呂", "薬湯", "駐車場"],
+        "station": "調布",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.557679, 35.675760354071635]
+      }
+    },
+    {
+      "id": 23,
+      "type": "Feature",
+      "properties": {
+        "name": "神代湯",
+        "description": "",
+        "address": "調布市菊野台1-13-1",
+        "businessHours": "14:00,23:00",
+        "holiday": "水曜 ,（祝日は翌日休）",
+        "features": [
+          "露天風呂",
+          "サウナ",
+          "水風呂",
+          "薬湯",
+          "あつ湯",
+          "ぬる湯",
+          "駐車場"
+        ],
+        "station": "柴崎",
+        "homepage": "https://www.jindaiyu.jp/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.5663892883587, 35.65491227081327]
+      }
+    },
+    {
+      "id": 24,
+      "type": "Feature",
+      "properties": {
+        "name": "鶴の湯",
+        "description": "",
+        "address": "調布市下石原1-10-2",
+        "businessHours": "15:00,23:00",
+        "holiday": "水曜",
+        "features": ["サウナ", "水風呂", "あつ湯", "ぬる湯", "駐車場"],
+        "station": "西調布",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.53523871164128, 35.657655563681345]
+      }
+    },
+    {
+      "id": 25,
+      "type": "Feature",
+      "properties": {
+        "name": "藤の湯",
+        "description": "",
+        "address": "府中市朝日町2-27-20",
+        "businessHours": "16:00,23:00",
+        "holiday": "月曜",
+        "features": ["駐車場"],
+        "station": "多磨",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.518399, 35.677011596096364]
+      }
+    },
+    {
+      "id": 26,
+      "type": "Feature",
+      "properties": {
+        "name": "松の湯",
+        "description": "",
+        "address": "府中市新町3-6-5",
+        "businessHours": "15:00,22:45",
+        "holiday": "月曜",
+        "features": ["サウナ"],
+        "station": "国分寺",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.71488372521887, 35.606101931990025]
+      }
+    },
+    {
+      "id": 27,
+      "type": "Feature",
+      "properties": {
+        "name": "府中湯楽館 桜湯",
+        "description": "",
+        "address": "府中市宮町1-23-3",
+        "businessHours": "16:00,23:00",
+        "holiday": "無休",
+        "features": ["サウナ", "水風呂", "薬湯"],
+        "station": "府中",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.48215320370215, 35.67104406753748]
+      }
+    },
+    {
+      "id": 28,
+      "type": "Feature",
+      "properties": {
+        "name": "旭湯",
+        "description": "",
+        "address": "府中市宮西町3-6-2",
+        "businessHours": "16:00,23:00",
+        "holiday": "月曜,祝日",
+        "features": ["サウナ", "薬湯", "あつ湯"],
+        "station": "府中",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.474187, 35.67214917834828]
+      }
+    },
+    {
+      "id": 29,
+      "type": "Feature",
+      "properties": {
+        "name": "桃の湯",
+        "description": "",
+        "address": "国分寺市東元町3-1-20",
+        "businessHours": "16:00,24:00",
+        "holiday": "7、17、27日",
+        "features": ["駐車場"],
+        "station": "国分寺",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.48070854232824, 35.69423168089712]
+      }
+    },
+    {
+      "id": 30,
+      "type": "Feature",
+      "properties": {
+        "name": "ぬくい湯",
+        "description": "",
+        "address": "小金井市貫井北町3-4-4",
+        "businessHours": "16:00,23:00",
+        "holiday": "月曜",
+        "features": ["あつ湯"],
+        "station": "武蔵小金井",
+        "homepage": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.49744554232822, 35.70763032351026]
       }
     }
   ]

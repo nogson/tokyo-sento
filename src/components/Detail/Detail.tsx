@@ -1,24 +1,77 @@
-import React from "react";
 import styles from "@/components/Detail/Detail.module.scss";
+import Map from "@/components/Maps";
+import {
+  postBathComment,
+  useQueryBathComments,
+  visitedBath,
+} from "@/lib/request/detail";
+import { Modal } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { FeatureCollection } from "geojson";
 import Link from "next/link";
-import Map from "@/components/Maps/Map";
-import { MarkerPropsType } from "@/types/Map";
-import { Feature, FeatureCollection } from "geojson";
+import CommentList from "./CommentList";
 import Slider from "./Slider";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
 
 type propsType = {
   selectedMarker: any;
 };
 
 const Detail = ({ selectedMarker }: propsType) => {
+  const [comment, setComment] = useState("");
+  const [
+    visitedDialogOpened,
+    { open: visitedDialogOpen, close: visitedDialogClose },
+  ] = useDisclosure(false);
+  const [
+    commentDialogOpened,
+    { open: commentDialogOpen, close: commentDialogClose },
+  ] = useDisclosure(false);
+
   const properties = selectedMarker.properties;
   const geometry = selectedMarker.geometry;
 
-  const abc: FeatureCollection = {
+  const layerData: FeatureCollection = {
     type: "FeatureCollection",
     features: [selectedMarker],
   };
+
+  // ログインユーザー情報
+  const queryClient = useQueryClient();
+  const userInfo = queryClient.getQueryData(["user"]);
+  // コメント情報
+  const { data: commentData, status } = useQueryBathComments(selectedMarker.id);
+  // コメントの更新
+  const { mutate: postComment } = useMutation({
+    mutationFn: () => postBathComment(selectedMarker.id, comment),
+    onMutate: async () => {
+      await queryClient.cancelQueries({
+        queryKey: ["comments", selectedMarker.id],
+      });
+    },
+    onSuccess: (data) => {},
+    onSettled() {
+      queryClient.invalidateQueries({
+        queryKey: ["comments", selectedMarker.id],
+      });
+      commentDialogClose();
+    },
+  });
+
+  async function visitBath() {
+    if (!userInfo) {
+      alert("ログインしてください");
+      return;
+    }
+    await visitedBath(selectedMarker.id);
+    visitedDialogOpen();
+  }
+
+  function showCommentDialog() {
+    visitedDialogClose();
+    commentDialogOpen();
+  }
 
   return (
     <section className={styles.detailWrap}>
@@ -71,31 +124,76 @@ const Detail = ({ selectedMarker }: propsType) => {
             <div className={styles.detailShopMap}>
               <Map
                 center={geometry.coordinates}
-                layerData={abc}
+                layerData={layerData}
                 canSelectMarker={false}
               />
             </div>
             <div className={styles.detailShopMapLink}></div>
           </div>
-          <div className={styles.detailCustomerVoice}>
-            <h2>利用者の声</h2>
-            <dl className={styles.detailCustomerVoiceItem}>
-              <dt></dt>
-              <dd>とてもよい銭湯でした。また行きたいと思います</dd>
-            </dl>
-            <dl className={styles.detailCustomerVoiceItem}>
-              <dt></dt>
-              <dd>とてもよい銭湯でした。また行きたいと思います</dd>
-            </dl>
-          </div>
+          <CommentList comment={commentData} />
         </div>
       </div>
       <div className={styles.detailBottomButton}>
-        <button className="button-primary-solid has-icon-button">
+        <button
+          className="button-primary-solid has-icon-button"
+          onClick={visitBath}
+        >
           <i className="icon-onsen" />
           <span>お風呂に入りました</span>
         </button>
       </div>
+      <Modal
+        opened={visitedDialogOpened}
+        withCloseButton
+        onClose={visitedDialogClose}
+        radius="md"
+        centered={true}
+        overlayProps={{ opacity: 0.7 }}
+        title={
+          <div className="title-md-primary">
+            {properties.name}のお風呂に入りました！
+          </div>
+        }
+      >
+        <p className="mb-md">
+          お風呂はどうでしたか？
+          <br />
+          よかったらコメントお願いします！
+        </p>
+        <div className="text-al-center">
+          <button className="button-primary" onClick={showCommentDialog}>
+            お風呂のコメントを書く
+          </button>
+        </div>
+      </Modal>
+      <Modal
+        opened={commentDialogOpened}
+        withCloseButton
+        onClose={commentDialogClose}
+        radius="md"
+        centered={true}
+        overlayProps={{ opacity: 0.7 }}
+        title={
+          <div className="title-md-primary">
+            是非良いコメントをお願いします！
+          </div>
+        }
+      >
+        <div className="mb-md">
+          <textarea
+            value={comment}
+            className="textarea"
+            placeholder="お風呂の感想を書いてください"
+            onChange={(e) => setComment(e.target.value)}
+          />
+        </div>
+
+        <div className="text-al-center">
+          <button className="button-primary" onClick={() => postComment()}>
+            コメントを投稿
+          </button>
+        </div>
+      </Modal>
     </section>
   );
 };

@@ -11,8 +11,9 @@ import { baseFont } from "src/features/font";
 import { MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { theme } from "@/features/theme";
-import Header from "@/components/Header/Header";
+import Header from "@/components/Header";
 import { Providers } from "@/lib/providers";
+import { refreshToken } from "@/lib/request/auth";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +25,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="ja">
       <head></head>

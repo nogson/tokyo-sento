@@ -1,6 +1,5 @@
 import ENDPOINT from "@/lib/request/endpoint";
 import request from "@/lib/request/request";
-import { User } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 
 export const useQueryUser = () => {
@@ -12,5 +11,17 @@ export const useQueryUser = () => {
   return useQuery({
     queryKey: ["user"],
     queryFn: getUser,
+  });
+};
+
+export const useQueryVisitedBath = () => {
+  const getVisitedBath = async () => {
+    const res = await request.get(ENDPOINT.GET_USER_VISITED_BATHS);
+    return res?.data;
+  };
+
+  return useQuery({
+    queryKey: ["visitedBath"],
+    queryFn: getVisitedBath,
   });
 };

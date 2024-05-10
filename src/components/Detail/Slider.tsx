@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/components/Detail/Slider.module.scss";
 import { Carousel } from "@mantine/carousel";
 
+
 interface SliderProps {
   // Define your props here
 }

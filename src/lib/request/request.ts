@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useTokenStore } from "@/store";
 
 const instance = axios.create({
   headers: {
@@ -9,13 +10,17 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   (request) => {
-    if (localStorage.getItem("token")) {
-      request.headers.authorization = `${localStorage.getItem("token")}`;
+    const token = useTokenStore.getState().token;
+    if (token) {
+      request.headers.authorization = `${token}`;
     }
     return request;
   },
   (error) => {
-    console.log("request", error);
+    // console.log("request", error);
+    if (error.response.status === 401) {
+      useTokenStore.setState({ token: "" });
+    }
     return Promise.reject(error);
   }
 );
@@ -25,7 +30,7 @@ instance.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.log("response", error);
+    // console.log("response", error);
     return Promise.reject(error);
   }
 );

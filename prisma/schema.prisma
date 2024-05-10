@@ -7,22 +7,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updateAt    DateTime
-  title       String
-  description String?
-  userId      Int
-  User        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
 model User {
-  id             Int      @id @default(autoincrement())
-  createdAt      DateTime @default(now())
+  id             Int           @id @default(autoincrement())
+  createdAt      DateTime      @default(now())
   updateAt       DateTime
-  email          String   @unique
+  email          String        @unique
   hashedPassword String
   nickName       String?
-  Task           Task[]
+  Comment        Comment[]
+  VisitedBath    VisitedBath[]
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updateAt  DateTime
+  bathId    Int
+  userId    Int
+  content   String
+  User      User     @relation(fields: [userId], references: [id])
+}
+
+model VisitedBath {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  bathId    Int
+  userId    Int
+  User      User     @relation(fields: [userId], references: [id])
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Account.module.scss";
+import styles from "./MyMenu.module.scss";
 import Image from "next/image";
 import IconMyPage from "@/common/images/icon_mypage.svg";
 import { useQueryUser } from "@/lib/request/user";
@@ -16,7 +16,7 @@ type PropsType = {
   setIsTooltipOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Account = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
+const MyMenu = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
   const [opened, { open, close }] = useDisclosure(false);
   const { data: userData, status } = useQueryUser();
   const queryClient = useQueryClient();
@@ -28,7 +28,6 @@ const Account = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
   const logoutFunc = async () => {
     await logout({ email: "user1@test.com", password: "user1" });
     queryClient.removeQueries({ queryKey: ["user"] });
-
     close();
     notifications.show({
       message: "ログアウトしました",
@@ -84,7 +83,7 @@ const Account = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
         centered
       >
         <div className="modal-button-wrapper">
-          <button>キャンセル</button>
+          <button onClick={close}>キャンセル</button>
           <button className="button-primary" onClick={logoutFunc}>
             ログアウト
           </button>
@@ -94,4 +93,4 @@ const Account = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
   );
 };
 
-export default Account;
+export default MyMenu;

@@ -1,0 +1,47 @@
+.detailCustomerVoice {
+  margin-top: var(--space-size-lg);
+}
+
+.detailCustomerVoiceItem {
+  display: flex;
+  gap: var(--space-size-md);
+  align-items: flex-end;
+  margin-top: var(--space-size-lg);
+  dt {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 100px;
+      background: url("../../common/images/icon_yu.svg") no-repeat center center;
+    }
+  }
+
+  dd {
+    background: var(--color-white);
+    padding: var(--space-size-sm) var(--space-size-md);
+    border-radius: 16px 16px 16px 0;
+  }
+}
+
+.commentFace1 {
+  background-color: #ffd941;
+}
+
+.commentFace2 {
+  background-color: #ff7439;
+}
+
+.commentFace3 {
+  background-color: #ff5ccb;
+}
+
+.commentFace4 {
+  background-color: #ff4245;
+}

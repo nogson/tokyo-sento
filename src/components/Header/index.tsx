@@ -4,7 +4,7 @@ import styles from "@/components/Header/Header.module.scss";
 import Image from "next/image";
 import Logo from "@/common/images/logo.svg";
 import Link from "next/link";
-import Account from "./Account";
+import MyMenu from "./MyMenu";
 import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
         className={styles.header}
         onMouseLeave={() => setIsTooltipOpen(false)}
       >
-        <Link href="/">
+        <Link href="/" className={styles.logo}>
           <Image src={Logo} alt="Logo" priority onClick={() => push("/")} />
         </Link>
         {pathname !== "/login" && (
@@ -32,7 +32,7 @@ const Header = () => {
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Account
+                <MyMenu
                   isTooltipOpen={isTooltipOpen}
                   setIsTooltipOpen={setIsTooltipOpen}
                 />
