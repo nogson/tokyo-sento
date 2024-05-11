@@ -5,7 +5,7 @@
 .detailCustomerVoiceItem {
   display: flex;
   gap: var(--space-size-md);
-  align-items: flex-end;
+  align-items: end;
   margin-top: var(--space-size-lg);
   dt {
     width: 40px;

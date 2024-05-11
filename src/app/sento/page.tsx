@@ -1,10 +1,10 @@
-import React from 'react';
-import RootLayout from '../layout';
+import React from "react";
+import BathViewer from "@/components/BathViewer";
 
 export default function Sample() {
-    return (
-        <RootLayout>
-            <h1>Sample</h1>
-        </RootLayout>
-    );
+  return (
+    <section className="page-wrapper">
+      <BathViewer />
+    </section>
+  );
 }
