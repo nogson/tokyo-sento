@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "@/common/scss/reset.scss";
-import "@/common/scss/globals.scss";
-import "@/common/scss/common.scss";
-import "@/common/scss/map.scss";
+import "@/assets/scss/reset.scss";
+import "@/assets/scss/globals.scss";
+import "@/assets/scss/common.scss";
+import "@/assets/scss/map.scss";
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/carousel/styles.css";

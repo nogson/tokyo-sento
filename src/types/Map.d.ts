@@ -14,3 +14,11 @@ export type MarkerPropsType = {
     coordinates: [number, number];
   };
 };
+
+export type VisitedBathDataType = {
+  id: number;
+  bathId: number;
+  userId: number;
+  createdAt: string;
+  updatedAt: string;
+};

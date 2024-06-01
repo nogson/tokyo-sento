@@ -1,5 +1,5 @@
 import styles from "@/page.module.scss";
-import MapWrapper from "@/components/Maps/MapWrapper";
+import MapWrapper from "@/components/MapWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

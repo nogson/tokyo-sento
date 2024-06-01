@@ -1,7 +1,7 @@
 .detailWrap {
   position: fixed;
   top: 0;
-  left: 0;
+  left: var(--space-size-lg);
   z-index: 50;
   background-color: var(--color-primary-lighten);
   height: 100vh;
@@ -15,7 +15,7 @@
 .detailHead {
   position: fixed;
   top: 0;
-  left: 0;
+  left: var(--space-size-lg);
   width: var(--web-content-width);
   background: var(--color-sub01);
   height: var(--header-height);
@@ -39,6 +39,9 @@
   gap: var(--space-size-sm);
   margin-top: var(--space-size-lg);
   font-size: var(--font-size-sm);
+  background: rgba(255, 255, 255, 0.5);
+  padding: var(--space-size-md);
+  border-radius: var(--border-radius);
   dl {
     display: flex;
     gap: var(--space-size-md);
@@ -90,7 +93,7 @@
 
 .detailBottomButton {
   position: fixed;
-  left: 0;
+  left: var(--space-size-lg);
   bottom: 0;
   z-index: 10;
   width: var(--web-content-width);
@@ -100,6 +103,29 @@
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.2);
   button {
     width: 100%;
+    font-weight: bold;
+  }
+}
+
+.detailLinks {
+  font-size: var(--font-size-sm);
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-size-md);
+  gap: var(--space-size-md);
+}
+
+.detailLink {
+  padding: var(--space-size-sm) var(--space-size-md);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  cursor: pointer;
+  a {
+    line-height: 1;
+  }
+  span {
     font-weight: bold;
   }
 }

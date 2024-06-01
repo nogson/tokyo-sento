@@ -28,3 +28,5 @@ export const postBathComment = async (bathId: number, content: string) => {
   );
   return res;
 };
+
+

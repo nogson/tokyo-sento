@@ -38,8 +38,7 @@ const LoginPage: NextPage = () => {
       if (isRegister) {
         await signUp(form.values);
       }
-      // signupの場合は続けてアクセストークンを取得する為loginを実行
-
+      // sighupの場合は続けてアクセストークンを取得する為loginを実行
       const res = await login(form.values);
       form.reset();
       router.push("/");

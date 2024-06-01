@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "@/components/Header/Header.module.scss";
 import Image from "next/image";
-import Logo from "@/common/images/logo.svg";
+import Logo from "@/assets/images/logo.svg";
 import Link from "next/link";
 import MyMenu from "./MyMenu";
 import { usePathname, useRouter } from "next/navigation";
@@ -25,9 +25,6 @@ const Header = () => {
         {pathname !== "/login" && (
           <nav className={styles.nav}>
             <ul>
-              <li>
-                <Link href="/news">News</Link>
-              </li>
               <li>
                 <Link href="/about">About</Link>
               </li>

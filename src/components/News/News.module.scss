@@ -1,0 +1,62 @@
+.newsIcon {
+  position: fixed;
+  bottom: 100px;
+  right: var(--space-size-xl);
+  z-index: 101;
+  cursor: pointer;
+  &:global(.opened) {
+    transition: bottom 0.3s ease-in-out;
+    bottom: 240px;
+  }
+  &:global(.closed) {
+    transition: bottom 0.3s ease-in-out;
+    bottom: 100px;
+  }
+}
+
+.newsList {
+  position: fixed;
+  bottom: 120px;
+  right: var(--space-size-xl);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.8);
+  padding: var(--space-size-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  width: 350px;
+  box-sizing: border-box;
+  dl {
+    margin-bottom: var(--space-size-md);
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    dt {
+      font-size: var(--font-size-xs);
+    }
+    dd {
+      font-size: var(--font-size-sm);
+    }
+  }
+  &:global(.opened) {
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    opacity: 1;
+    visibility: visible;
+  }
+  &:global(.closed) {
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.newsListTitle {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  margin-bottom: var(--space-size-md);
+}
+
+.newsListScrollArea {
+  max-height: 300px;
+  overflow-y: auto;
+}

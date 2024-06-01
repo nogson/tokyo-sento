@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import styles from "@/components/Search/Search.module.scss";
 import { getGeoJson } from "@/lib/request/map";
 import { CgClose } from "react-icons/cg";
+import { Input, CloseButton } from "@mantine/core";
 
 type PropsType = {
   setLayerData: (data: any) => void;
@@ -49,8 +50,6 @@ const Search = ({ setLayerData }: PropsType) => {
   };
 
   const clearKeyword = () => {
-    if (searchInput.current === null) return;
-    searchInput.current.value = "";
     setKeyword("");
     search({ keyword: "", features });
   };
@@ -67,17 +66,29 @@ const Search = ({ setLayerData }: PropsType) => {
       <div className={styles.searchInput}>
         <div className="custom-marker" />
         <div className={styles.searchInputWrapper}>
-          <input
+          {/* <input
             ref={searchInput}
             name="keyword"
             type="text"
             placeholder="キーワード・駅名"
             className="input-text"
             onChange={(e) => setKeyword(e.target.value)}
+          /> */}
+          <Input
+            value={keyword}
+            placeholder="キーワード・駅名"
+            onChange={(event) => setKeyword(event.currentTarget.value)}
+            rightSectionPointerEvents="all"
+            rightSection={
+              <CloseButton
+                aria-label="Clear input"
+                onClick={clearKeyword}
+                style={{ display: keyword ? undefined : "none" }}
+              />
+            }
+            size="md"
+            radius="xl"
           />
-          <button onClick={clearKeyword}>
-            <CgClose />
-          </button>
         </div>
       </div>
       <div className={styles.searchOptions}>

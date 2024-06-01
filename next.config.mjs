@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   sassOptions: {
-    prependData: `@import "@/common/scss/_mantine.scss";`,
+    prependData: `@import "@/assets/scss/_mantine.scss";`,
   },
 };
 

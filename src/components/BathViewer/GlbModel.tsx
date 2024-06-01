@@ -1,7 +1,7 @@
 import { Vector3, useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import Bath022 from "@/common/model/Bath022";
+import Bath022 from "@/assets/model/Bath022";
 
 const GlbModel: React.FC = () => {
   const groupRef = useRef<THREE.Group>();
