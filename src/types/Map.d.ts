@@ -22,3 +22,8 @@ export type VisitedBathDataType = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type MarkerRequestPropsType = {
+  keyword: string;
+  features: string[];
+};

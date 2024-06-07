@@ -1,13 +1,16 @@
-import axios from "axios";
-import request from "@/lib/request/request";
 import ENDPOINT from "@/lib/request/endpoint";
+import request from "@/lib/request/request";
 import { notifications } from "@mantine/notifications";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+
 type GetGeoJsonProps = {
   keyword?: string;
   features?: string[];
 };
 
-export async function getGeoJson({
+export const geojsonQerykey = ["geojson"] as const;
+
+async function getGeoJson({
   keyword,
   features,
 }: GetGeoJsonProps = {}): Promise<any> {
@@ -39,11 +42,44 @@ export async function getGeoJson({
   if (data.length !== 0) {
     response!.data.features = data;
   } else {
+    notifications.clean();
     notifications.show({
       message: "該当する銭湯がありませんでした😔",
       withCloseButton: false,
+      color: "red",
     });
   }
 
   return response;
 }
+
+export const useQueryGeoJson = (props: GetGeoJsonProps = {}) => {
+  const getJsonA = async () => {
+    const res = await getGeoJson(props);
+    return res.data;
+  };
+
+  return useQuery({
+    queryKey: geojsonQerykey,
+    queryFn: getJsonA,
+  });
+};
+
+export const useMutationGeoJson = ({
+  keyword,
+  features,
+}: GetGeoJsonProps = {}): any => {
+  const queryClient = useQueryClient();
+
+  const getJson = async (props: GetGeoJsonProps) => {
+    const res = await getGeoJson(props);
+    return res.data;
+  };
+
+  return useMutation({
+    mutationFn: getJson,
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: geojsonQerykey });
+    },
+  });
+};

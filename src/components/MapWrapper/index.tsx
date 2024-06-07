@@ -1,46 +1,34 @@
 "use client";
 
-import Map from "@/components/MapWrapper/Map";
 import Detail from "@/components/Detail";
-import Search from "@/components/Search";
-import { Suspense, useEffect, useState } from "react";
-import { getGeoJson } from "@/lib/request/map";
-import { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
-import News from "@/components/News";
+import Map from "@/components/MapWrapper/Map";
 import styles from "@/components/MapWrapper/MapWrapper.module.scss";
+import { Suspense, useContext, useEffect, useState } from "react";
+import { useQueryGeoJson } from "@/lib/request/map";
+import { SearchFilterContext } from "@/components/HomeWrapper";
 
 const MapWrapper = () => {
+  const [searchFilter] = useContext(SearchFilterContext);
   const [selectedMarker, setSelectedMarker] = useState(null);
-  const [layerData, setLayerData] = useState<
-    FeatureCollection<Geometry, GeoJsonProperties>
-  >({
-    type: "FeatureCollection",
-    features: [],
-  });
+  const { data: layerData, status } = useQueryGeoJson(searchFilter);
 
-  const getLayerData = async () => {
-    const response = await getGeoJson();
-    setLayerData(response.data);
-  };
-
-  useEffect(() => {
-    getLayerData();
-  }, []);
+  useEffect(() => {});
+  const [layerDataRequest, setLayerDataRequest] = useState({});
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div>
-        <div className={styles.news}>
-          <News />
-        </div>
-        <Search setLayerData={setLayerData} />
         {/* 詳細情報を表示 */}
         {selectedMarker !== null && <Detail selectedMarker={selectedMarker} />}
-        <Map
-          layerData={layerData}
-          setSelectedMarker={setSelectedMarker}
-          selectedMarker={selectedMarker}
-        />
+        {layerData && status === "success" ? (
+          <Map
+            layerData={layerData}
+            setSelectedMarker={setSelectedMarker}
+            selectedMarker={selectedMarker}
+          />
+        ) : (
+          <div>MAP Loading...</div>
+        )}
       </div>
     </Suspense>
   );

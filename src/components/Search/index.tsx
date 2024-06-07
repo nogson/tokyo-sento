@@ -1,24 +1,21 @@
-import React, { useRef, useState } from "react";
 import styles from "@/components/Search/Search.module.scss";
-import { getGeoJson } from "@/lib/request/map";
-import { CgClose } from "react-icons/cg";
-import { Input, CloseButton } from "@mantine/core";
+import { useMutationGeoJson } from "@/lib/request/map";
+import { CloseButton, Input } from "@mantine/core";
+import React, { useContext, useRef, useState } from "react";
+import { MarkerRequestPropsType } from "@/types/Map";
+import { SearchFilterContext } from "@/components/HomeWrapper";
+// type PropsType = {
+//   setLayerData: (data: any) => void;
+//   setLayerDataRequest: (data: MarkerRequestPropsType) => void;
+// };
 
-type PropsType = {
-  setLayerData: (data: any) => void;
-};
-
-type RequestPropsType = {
-  keyword: string;
-  features: string[];
-};
-
-const Search = ({ setLayerData }: PropsType) => {
+const Search = () => {
+  const [, setSearchFilter] = useContext(SearchFilterContext);
   const [features, setFeatures] = useState<string[]>([]);
   const [keyword, setKeyword] = useState<string>("");
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const searchBoxElement = useRef<HTMLDivElement>(null);
-  const searchInput = useRef<HTMLInputElement>(null);
+  const mutationGeoJson = useMutationGeoJson();
 
   const featuresList = [
     { name: "feature1", value: "サウナ" },
@@ -35,9 +32,13 @@ const Search = ({ setLayerData }: PropsType) => {
     { name: "feature12", value: "寝湯" },
   ];
 
-  const search = async (props: RequestPropsType) => {
-    const response = await getGeoJson(props);
-    setLayerData(response.data);
+  const search = async (props: MarkerRequestPropsType) => {
+    console.log("search", props);
+    // setLayerDataRequest(props);
+    // const response = await getGeoJson(props);
+    // setLayerData(response.data);
+    mutationGeoJson.mutate(props);
+    setSearchFilter(props);
   };
 
   const checkFeature = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,14 +67,6 @@ const Search = ({ setLayerData }: PropsType) => {
       <div className={styles.searchInput}>
         <div className="custom-marker" />
         <div className={styles.searchInputWrapper}>
-          {/* <input
-            ref={searchInput}
-            name="keyword"
-            type="text"
-            placeholder="キーワード・駅名"
-            className="input-text"
-            onChange={(e) => setKeyword(e.target.value)}
-          /> */}
           <Input
             value={keyword}
             placeholder="キーワード・駅名"

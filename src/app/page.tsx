@@ -1,6 +1,6 @@
 import styles from "@/page.module.scss";
-import MapWrapper from "@/components/MapWrapper";
 import type { Metadata } from "next";
+import HomeWrapper from "@/components/HomeWrapper";
 
 export const metadata: Metadata = {
   title: "SENTO FUN TOKYO | 銭湯好きの為の銭湯ファンサイト",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <section>
-      <MapWrapper />
+      <HomeWrapper />
     </section>
   );
 }

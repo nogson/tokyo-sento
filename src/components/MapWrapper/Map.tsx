@@ -1,21 +1,20 @@
 "use client";
 
+import { useQueryVisitedBath } from "@/lib/request/user";
+import { isOpen } from "@/lib/utils/util";
+import { VisitedBathDataType } from "@/types/Map";
+import MapboxLanguage from "@mapbox/mapbox-gl-language";
+import { Feature, FeatureCollection } from "geojson";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 import React, {
   Dispatch,
   SetStateAction,
   useEffect,
   useRef,
   useState,
-  memo,
 } from "react";
-import mapboxgl from "mapbox-gl";
-import MapboxLanguage from "@mapbox/mapbox-gl-language";
-import "mapbox-gl/dist/mapbox-gl.css";
 import style from "./Map.module.scss";
-import { FeatureCollection, Feature } from "geojson";
-import { isOpen } from "@/lib/utils/util";
-import { VisitedBathDataType } from "@/types/Map";
-import { useQueryVisitedBath } from "@/lib/request/user";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_STYLE_ACCESS_TOKEN ?? "";
 
@@ -37,7 +36,6 @@ const Map = ({
 }: PropsType) => {
   const { data: visitedBathData, status } = useQueryVisitedBath();
   const mapContainerRef = useRef(null);
-  const [markerElms, setMarkerElms] = useState<HTMLDivElement[]>([]);
   const removeSelectedMarker = () => {
     const selectedMarkerElement = document.querySelector(
       ".custom-marker-selected"
@@ -46,7 +44,6 @@ const Map = ({
       selectedMarkerElement.classList.remove("custom-marker-selected");
     }
   };
-  console.log("visitedBathData", visitedBathData);
   const checkVisited = (id: number) => {
     return visitedBath.includes(id);
   };
@@ -55,7 +52,7 @@ const Map = ({
     ? visitedBathData.map((data: VisitedBathDataType) => data.bathId)
     : [];
 
-  const addClassToMaker = (customIcon: HTMLDivElement, id: number) => {
+  const addClassToMaker = (customIcon: HTMLElement, id: number) => {
     // CSS クラスを適用
     if (!customIcon) return;
     customIcon.className = checkVisited(id)
@@ -63,10 +60,10 @@ const Map = ({
       : "custom-marker";
   };
 
+
   const setOriginalLayer = async (map: mapboxgl.Map) => {
     if (!layerData) return;
-    const markerArr: HTMLDivElement[] = [];
-
+    const markerArr: mapboxgl.Marker[] = [];
     map.addSource("publicBath", {
       type: "geojson",
       data: layerData,
@@ -75,7 +72,6 @@ const Map = ({
     layerData.features.forEach((feature: any) => {
       // カスタムアイコンの作成
       const customIcon = document.createElement("div");
-      addClassToMaker(customIcon, feature.id);
       // popupを作成
       const divElement = document.createElement("div");
       const buttonElement = document.createElement("div");
@@ -91,10 +87,12 @@ const Map = ({
       } else {
         openElm = `<span class="unknown">休業かも</span>`;
       }
-
       divElement.innerHTML = `<h3>${openElm} ${feature.properties.name}</h3>`;
       buttonElement.innerHTML = `<button class="button-primary-solid sm">詳しく見る</button>`;
       divElement.appendChild(buttonElement);
+
+      // customIconにCSSクラスを追加
+      addClassToMaker(customIcon, feature.id);
 
       // ポップアップの「詳しく見る」をクリックした時の処理
       buttonElement.addEventListener("click", (e) => {
@@ -113,11 +111,9 @@ const Map = ({
         removeSelectedMarker();
         // 選択中のマーカーにCSSクラスを追加
         customIcon.className = "custom-marker custom-marker-selected";
-        markerArr.push(customIcon);
+
         popup.remove();
       });
-
-      setMarkerElms(markerArr);
 
       const popup = new mapboxgl.Popup({
         offset: 25,
@@ -165,15 +161,8 @@ const Map = ({
     return () => map.remove(); // Clean up when component unmounts
   }, [layerData]);
 
-  useEffect(() => {
-    if (status === "success") {
-      layerData?.features.forEach((feature: any, i: number) => {
-        addClassToMaker(markerElms[i], feature.id);
-      });
-    }
-  }, [visitedBathData]);
 
   return <div className={style.mapContainer} ref={mapContainerRef} />;
 };
 
-export default memo(Map);
+export default Map;
