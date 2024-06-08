@@ -25,8 +25,12 @@ const MyMenu = ({ isTooltipOpen, setIsTooltipOpen }: PropsType) => {
 
   const logoutFunc = async () => {
     // TODO: ログアウト処理
-    await logout({ email: userData.email, password: "user1" });
-    queryClient.removeQueries({ queryKey: ["user"] });
+    await logout();
+    queryClient.resetQueries({
+      queryKey: ["user", "visitedBath"],
+      exact: true,
+    });
+
     close();
     notifications.show({
       message: "ログアウトしました",

@@ -72,7 +72,7 @@ const Detail = ({ selectedMarker }: propsType) => {
     mutationFn: () => visitedBath(selectedMarker.id),
     onSuccess: (data) => {
       visitedDialogOpen();
-      queryClient.invalidateQueries({ queryKey: ["visitedBath"] });
+      queryClient.invalidateQueries({ queryKey: ["visitedBath"], exact: true });
     },
   });
 

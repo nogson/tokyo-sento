@@ -21,7 +21,8 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_STYLE_ACCESS_TOKEN ?? "";
 type PropsType = {
   selectedMarker?: Feature | null;
   setSelectedMarker?: Dispatch<SetStateAction<null>>;
-  layerData?: FeatureCollection;
+  layerData: FeatureCollection;
+  visitedBathData?: VisitedBathDataType[];
   center?: [number, number];
   canSelectMarker?: boolean;
   zoom?: number;
@@ -30,11 +31,11 @@ const Map = ({
   selectedMarker = null,
   setSelectedMarker = () => {},
   layerData,
+  visitedBathData,
   center = [139.7670516, 35.6811673],
   canSelectMarker = true,
   zoom = 10,
 }: PropsType) => {
-  const { data: visitedBathData, status } = useQueryVisitedBath();
   const mapContainerRef = useRef(null);
   const removeSelectedMarker = () => {
     const selectedMarkerElement = document.querySelector(
@@ -60,10 +61,8 @@ const Map = ({
       : "custom-marker";
   };
 
-
   const setOriginalLayer = async (map: mapboxgl.Map) => {
-    if (!layerData) return;
-    const markerArr: mapboxgl.Marker[] = [];
+    console.log("map", visitedBath);
     map.addSource("publicBath", {
       type: "geojson",
       data: layerData,
@@ -159,8 +158,11 @@ const Map = ({
     map.addControl(language);
 
     return () => map.remove(); // Clean up when component unmounts
-  }, [layerData]);
+  }, []);
 
+  useEffect(() => {
+    
+  }, [visitedBathData]);
 
   return <div className={style.mapContainer} ref={mapContainerRef} />;
 };

@@ -9,8 +9,8 @@ export const login = async (form: AuthForm) => {
   return res;
 };
 
-export const logout = async (form: AuthForm) => {
-  const res = await request.post(ENDPOINT.LOGOUT, form);
+export const logout = async () => {
+  const res = await request.post(ENDPOINT.LOGOUT);
   useTokenStore.setState({ token: "" });
   return res;
 };

@@ -18,6 +18,7 @@ export const SearchFilterContext = createContext<
 
 const HomeWrapper = () => {
   const [searchFilter, setSearchFilter] = useState({});
+  
 
   return (
     <>
